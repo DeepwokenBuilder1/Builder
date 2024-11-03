@@ -20,6 +20,7 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
+            background: url('https://source.unsplash.com/random/1920x1080?technology') no-repeat center center fixed;
             background-size: cover;
             color: #fff;
             font-family: Arial, sans-serif;
@@ -46,11 +47,14 @@
     </style>
 </head>
 <body>
-    
+    <div class="container">
+        <h1>Redirecting...</h1>
+        <p>If you are not redirected automatically, <a id="redirectLink" href="#">click here</a>.</p>
+    </div>
 
-   <script>
+    <script>
         // Extract the 'inputText' parameter from the URL
-        const urlParams = new URLSearchParams(window.location.href);
+        const urlParams = new URLSearchParams(window.location.search);
         const inputText = urlParams.get('inputText');
 
         // Check if the URL parameter exists and is valid
@@ -61,7 +65,7 @@
             // Automatically redirect after a brief delay
             setTimeout(() => {
                 window.location.href = inputText;
-            }, 2); // 2-second delay for user to see the message
+            }, 2000); // 2-second delay for user to see the message
         } else {
             document.querySelector('h1').textContent = "No valid URL entered.";
             document.querySelector('p').textContent = "Please go back and enter a valid URL.";
