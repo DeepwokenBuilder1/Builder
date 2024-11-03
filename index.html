@@ -27,7 +27,7 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-            background: url('https://media.istockphoto.com/id/513921039/photo/illustration-of-a-oool-yellow-smiley-with-sunglasses.jpg?s=612x612&w=0&k=20&c=hhVQxXTUhmcZLv2QrZ2WE2p7inzxQIA5H6XP8jPrQXw=') no-repeat center center fixed;
+            background: url('https://source.unsplash.com/random/1920x1080?technology') no-repeat center center fixed;
             background-size: cover;
             color: #fff;
         }
@@ -108,22 +108,12 @@
         <form id="linkForm">
             <label for="userInput">Your URL:</label>
             <input type="url" id="userInput" name="inputText" placeholder="https://example.com" required>
-            <button type="submit">Generate message</button>
+            <button type="submit">Generate Link</button>
         </form>
         <div id="linkOutput" class="link-display"></div>
     </div>
 
     <script>
-        // Function to generate a random 8-character alphanumeric string
-        function generateRandomString(length) {
-            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-            let result = '';
-            for (let i = 0; i < length; i++) {
-                result += characters.charAt(Math.floor(Math.random() * characters.length));
-            }
-            return result;
-        }
-
         document.getElementById("linkForm").addEventListener("submit", function(event) {
             event.preventDefault(); // Prevent form submission
 
@@ -131,19 +121,16 @@
             const linkOutput = document.getElementById("linkOutput");
 
             if (inputText) {
-                // Generate the unique 8-character string
-                const randomString = generateRandomString(8);
-
-                // Create the link to Sub1.html with the entered URL and random string as parameters
-                const linkToSub1 = `${window.location.origin}/Builder/Sub1.html?inputText=${encodeURIComponent(inputText)}&id=${randomString}
-                
+                // Create the link to Sub1.html with the entered URL as a parameter
+                const linkToSub1 = `${window.location.origin}/Sub1.html?inputText=${encodeURIComponent(inputText)}`;
 
                 // Display the link for the user to copy
-                linkOutput.innerHTML = `Copy and paste this link into your discord message: <br><a href="${linkToSub1}" target="_blank"> [ḧttps://deepwoken.co/builder?id=$(randomString)] (${linkToSub1})</a>`;
+                linkOutput.innerHTML = `Copy and paste this link into your browser: <br><a href="${linkToSub1}" target="_blank">${linkToSub1}</a>`;
             } else {
                 linkOutput.textContent = "Please enter a valid URL.";
             }
         });
     </script>
 </body>
+</html>
 </html>
