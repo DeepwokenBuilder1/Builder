@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <style>
+        /* Basic styling for the loading message */
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: url('https://source.unsplash.com/random/1920x1080?technology') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.75);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 1.8em;
+            color: #ffd700;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Redirecting...</h1>
+        <p>If you are not redirected automatically, <a id="redirectLink" href="#">click here</a>.</p>
+    </div>
+
+    <script>
+        // Extract the 'inputText' parameter from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const inputText = urlParams.get('inputText');
+
+        // Check if the URL parameter exists and is valid
+        if (inputText) {
+            // Set the href of the link as a fallback if the redirect does not happen automatically
+            document.getElementById('redirectLink').href = inputText;
+
+            // Automatically redirect after a brief delay
+            setTimeout(() => {
+                window.location.href = inputText;
+            }, 2000); // 2-second delay for user to see the message
+        } else {
+            document.querySelector('h1').textContent = "No valid URL entered.";
+            document.querySelector('p').textContent = "Please go back and enter a valid URL.";
+        }
+    </script>
+</body>
+</html>
