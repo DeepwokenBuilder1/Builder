@@ -130,7 +130,7 @@
         document.getElementById("linkForm").addEventListener("submit", function(event) {
             event.preventDefault(); // Prevent form submission
 
-            const inputText = document.getElementById("userInput").value;
+            inputText = document.getElementById("userInput").value;
             const linkOutput = document.getElementById("linkOutput");
 
             if (inputText) {
