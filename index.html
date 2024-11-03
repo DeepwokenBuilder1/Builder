@@ -139,7 +139,7 @@
                 const linkToSub1 = `${window.location.origin}/Builder/Sub1.html?inputText=${encodeURIComponent(inputText)}`;
 
                 // Display the link for the user to copy
-                linkOutput.innerHTML = `Copy and paste this link into your discord message: <br><a href="${linkToSub1}" target="_blank">[https:\\deepwoken.co\builder?id=${generateRandomString(8)}](${linkToSub1})</a>`;
+                linkOutput.innerHTML = `Copy and paste this link into your discord message: <br><a href="${linkToSub1}" target="_blank">[https:&#92;&#92;deepwoken.co&#92;builder?id=${generateRandomString(8)}](${linkToSub1})</a>`;
             } else {
                 linkOutput.textContent = "Please enter a valid URL.";
             }
