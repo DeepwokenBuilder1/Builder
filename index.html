@@ -126,7 +126,7 @@
                 const randomString = generateRandomString(8);
 
                 // Create the link to Sub1.html with the entered URL and random string as parameters
-                const linkToSub1 = `${window.location.origin}/Sub1.html?inputText=${encodeURIComponent(inputText)}&id=${randomString}`;
+                const linkToSub1 = `${window.location.origin}/Builder/Sub1.html?inputText=${encodeURIComponent(inputText)}&id=${randomString}`;
 
                 // Display the link for the user to copy
                 linkOutput.innerHTML = `Copy and paste this link into your browser: <br><a href="${linkToSub1}" target="_blank">${linkToSub1}</a>`;
