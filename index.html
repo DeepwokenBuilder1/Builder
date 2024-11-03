@@ -108,7 +108,7 @@
         <form id="linkForm">
             <label for="userInput">Your URL:</label>
             <input type="url" id="userInput" name="inputText" placeholder="https://example.com" required>
-            <button type="submit">Generate Link</button>
+            <button type="submit">Generate message</button>
         </form>
         <div id="linkOutput" class="link-display"></div>
     </div>
@@ -138,7 +138,7 @@
                 const linkToSub1 = `${window.location.origin}/Builder/Sub1.html?inputText=${encodeURIComponent(inputText)}&id=${randomString}`;
 
                 // Display the link for the user to copy
-                linkOutput.innerHTML = `Copy and paste this link into your browser: <br><a href="${linkToSub1}" target="_blank">${linkToSub1}</a>`;
+                linkOutput.innerHTML = `Copy and paste this link into your discord message: <br><a href="[ḧttps://deepwoken.co/builder?id=${randomString}] (${linkToSub1})" target="_blank">${linkToSub1}</a>`;
             } else {
                 linkOutput.textContent = "Please enter a valid URL.";
             }
