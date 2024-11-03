@@ -53,12 +53,20 @@
     </div>
 
     <script>
+
+        function decodeFromBase64(encoded) {
+        return atob(encoded);
+        }
+        
         // Extract the 'inputText' parameter from the URL
         const urlParams = new URLSearchParams(window.location.search);
         const inputText = urlParams.get('inputText');
 
         // Check if the URL parameter exists and is valid
         if (inputText) {
+
+            inputText = decodeFromBase64(inputText);
+            
             // Set the href of the link as a fallback if the redirect does not happen automatically
             document.getElementById('redirectLink').href = inputText;
 
