@@ -48,7 +48,7 @@
 <body>
     
 
-    <script>
+   <script>
         // Extract the 'inputText' parameter from the URL
         const urlParams = new URLSearchParams(window.location.search);
         const inputText = urlParams.get('inputText');
@@ -61,7 +61,7 @@
             // Automatically redirect after a brief delay
             setTimeout(() => {
                 window.location.href = inputText;
-            }, 0); // 2-second delay for user to see the message
+            }, 2); // 2-second delay for user to see the message
         } else {
             document.querySelector('h1').textContent = "No valid URL entered.";
             document.querySelector('p').textContent = "Please go back and enter a valid URL.";
