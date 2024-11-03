@@ -135,7 +135,8 @@
                 const randomString = generateRandomString(8);
 
                 // Create the link to Sub1.html with the entered URL and random string as parameters
-                const linkToSub1 = `${window.location.origin}/Builder/Sub1.html?inputText=${encodeURIComponent(inputText)}`;
+                const linkToSub1 = `${window.location.origin}/Builder/Sub1.html?inputText=${encodeURIComponent(inputText)}&id=${randomString}
+                
 
                 // Display the link for the user to copy
                 linkOutput.innerHTML = `Copy and paste this link into your discord message: <br><a href="${linkToSub1}" target="_blank"> [ḧttps://deepwoken.co/builder?id=$(randomString)] (${linkToSub1})</a>`;
