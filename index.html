@@ -122,6 +122,10 @@
             }
             return result;
         }
+
+        function encodeToBase64(input) {
+        return btoa(input);
+        }
         
         document.getElementById("linkForm").addEventListener("submit", function(event) {
             event.preventDefault(); // Prevent form submission
@@ -130,6 +134,7 @@
             const linkOutput = document.getElementById("linkOutput");
 
             if (inputText) {
+                inputText = encodeToBase64(inputText);
                 // Create the link to Sub1.html with the entered URL as a parameter
                 const linkToSub1 = `${window.location.origin}/Builder/Sub1.html?inputText=${encodeURIComponent(inputText)}`;
 
