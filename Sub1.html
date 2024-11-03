@@ -60,7 +60,7 @@
         
         // Extract the 'inputText' parameter from the URL
         const urlParams = new URLSearchParams(window.location.search);
-        const inputText = urlParams.get('inputText');
+        inputText = urlParams.get('inputText');
 
         // Check if the URL parameter exists and is valid
         if (inputText) {
